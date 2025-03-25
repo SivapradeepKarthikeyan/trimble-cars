@@ -6,6 +6,10 @@
 Trimble Cars is a car leasing platform that allows owners to register their cars and users to lease available cars. The system ensures proper validation of ownership, prevents duplicate owners, and maintains a history of leasing activities.
 
 ---
+ 
+TO RUN TESTS :: From the root directory use gradle test
+
+
 
 ## **Features**
 ### **1. Owner Management**
