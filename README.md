@@ -7,7 +7,7 @@ Trimble Cars is a car leasing platform that allows owners to register their cars
 
 ---
  
-TO RUN TESTS :: From the root directory use gradle test
+TO RUN TESTS :: From the root directory use ::  ./gradlew test jacocoTestReport
 
 
 
