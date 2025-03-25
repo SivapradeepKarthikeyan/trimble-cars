@@ -13,6 +13,12 @@
         {
           "name": "create owner",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "POST",
             "header": [],
             "body": {
@@ -31,6 +37,12 @@
         {
           "name": "create car",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "POST",
             "header": [],
             "body": {
@@ -49,6 +61,12 @@
         {
           "name": "get cars of owner",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "GET",
             "header": [],
             "url": "http://localhost:8080/api/v1/admin/owner/owner-100@example.com/car"
@@ -58,6 +76,12 @@
         {
           "name": "create user",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "POST",
             "header": [],
             "body": {
@@ -76,6 +100,12 @@
         {
           "name": "get cars by status (FREE or LEASED)",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "GET",
             "header": [],
             "url": {
@@ -104,6 +134,12 @@
         {
           "name": "book car to user",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "PUT",
             "header": [],
             "body": {
@@ -122,6 +158,12 @@
         {
           "name": "get user cars",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "GET",
             "header": [],
             "url": "http://localhost:8080/api/v1/admin/user/user-1@example.com/car"
@@ -131,6 +173,12 @@
         {
           "name": "cancel car",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{token}}"
+              }
+            },
             "method": "DELETE",
             "header": [],
             "body": {
@@ -151,6 +199,12 @@
     {
       "name": "create owner",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "POST",
         "header": [],
         "body": {
@@ -169,6 +223,12 @@
     {
       "name": "create car",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "POST",
         "header": [],
         "body": {
@@ -187,6 +247,12 @@
     {
       "name": "get cars of owner",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "GET",
         "header": [],
         "url": "http://localhost:8080/api/v1/owner/owner-1@example.com/car"
@@ -196,6 +262,12 @@
     {
       "name": "create user",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "POST",
         "header": [],
         "body": {
@@ -214,6 +286,12 @@
     {
       "name": "get cars by status (FREE or LEASED)",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -242,11 +320,17 @@
     {
       "name": "book car to user",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "PUT",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"carId\": \"082afd3a-9eea-4c66-9248-d9b9ac938615\",\n  \"leaseStartDate\": \"15-03-2025\",\n  \"leaseEndDate\": \"15-05-2025\"\n}\n",
+          "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"carId\": \"824376ed-9b99-405c-b1a1-1e22d8548fb9\",\n  \"leaseStartDate\": \"15-03-2025\",\n  \"leaseEndDate\": \"15-05-2025\"\n}\n",
           "options": {
             "raw": {
               "language": "json"
@@ -260,6 +344,12 @@
     {
       "name": "get user cars",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "GET",
         "header": [],
         "url": "http://localhost:8080/api/v1/user/user-1@example.com/car"
@@ -269,11 +359,17 @@
     {
       "name": "cancel car",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{token}}"
+          }
+        },
         "method": "DELETE",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"userEmail\": \"user-1@example.com\",\n    \"carId\": \"4639b606-6ee8-4b78-a6ae-6ceca0813924\"\n}",
+          "raw": "{\n    \"userEmail\": \"user-1@example.com\",\n    \"carId\": \"824376ed-9b99-405c-b1a1-1e22d8548fb9\"\n}",
           "options": {
             "raw": {
               "language": "json"
