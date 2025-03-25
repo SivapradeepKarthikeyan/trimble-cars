@@ -6,6 +6,11 @@ import jakarta.persistence.*;
 @Entity
 public class CarLeaseHistory {
 
+    //This entity is like a notebook that gets user and a car and other details.
+    //It keeps track of which car is being booked by which user.
+    //Also keep tracks of status like BOOKED and CANCELLED.
+    //whereas Car has status of FREE and LEASED.
+
     public CarLeaseHistory() {}
 
     public CarLeaseHistory(Car car, Users user, String userEmail ,String carName,String status,String startDate, String endDate) {

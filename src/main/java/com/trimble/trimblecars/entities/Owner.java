@@ -24,6 +24,7 @@ public class Owner {
 
     //One owner can have many cars
     //Each car will be mapped by owner ID
+    //If we give the owner object to car it will automatically map that car to this user id
     @OneToMany(mappedBy = "owner" , cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     private List<Car> cars;
 

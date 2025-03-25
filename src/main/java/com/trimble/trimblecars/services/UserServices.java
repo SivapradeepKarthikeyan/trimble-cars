@@ -127,8 +127,8 @@ public class UserServices {
             );
             carLeaseHistoryRepository.save(leaseHistory);
 
-            car.getLeaseHistory().add(leaseHistory);
-            user.getLeaseHistories().add(leaseHistory);
+            car.getCarLeaseHistory().add(leaseHistory);
+            user.getUserLeaseHistory().add(leaseHistory);
 
             log.info("Car booked successfully for user: {}, Car: {}",
                     bookCarDto.getUserEmail(), bookCarDto.getCarId());
@@ -166,6 +166,8 @@ public class UserServices {
                 return new TrimbleCarResponse("failed", "Car not assigned to user", 404, null);
             }
 
+            //Removing the relation between car and user
+            //And setting back default values
             car.setUser(null);
             car.setStatus("FREE");
             car.setUserEmail("");
@@ -178,8 +180,8 @@ public class UserServices {
             );
             carLeaseHistoryRepository.save(carLeaseHistory);
 
-            car.getLeaseHistory().add(carLeaseHistory);
-            user.getLeaseHistories().add(carLeaseHistory);
+            car.getCarLeaseHistory().add(carLeaseHistory);
+            user.getUserLeaseHistory().add(carLeaseHistory);
 
             log.info("Car cancelled successfully for user: {}, Car: {}",
                     cancelCarDto.getUserEmail(), cancelCarDto.getCarId());

@@ -1,0 +1,288 @@
+{
+  "info": {
+    "_postman_id": "2f1cb4a4-301b-493f-b6ba-aedd22558c40",
+    "name": "---AA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "27283402",
+    "_collection_link": "https://dark-meadow-836388.postman.co/workspace/PRADEEP~fa5829df-472d-4c0c-a83e-dd0166bc4c88/collection/27283402-2f1cb4a4-301b-493f-b6ba-aedd22558c40?action=share&creator=27283402&source=collection_link"
+  },
+  "item": [
+    {
+      "name": "admin",
+      "item": [
+        {
+          "name": "create owner",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ownerEmail\": \"owner-100@example.com\",\n    \"ownerFirstName\":\"owner\",\n    \"ownerLastName\":\"100\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/admin/owner"
+          },
+          "response": []
+        },
+        {
+          "name": "create car",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"carName\": \"carxxx-2\",\n    \"ownerEmail\": \"owner-1@example.com\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/admin/car"
+          },
+          "response": []
+        },
+        {
+          "name": "get cars of owner",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8080/api/v1/admin/owner/owner-100@example.com/car"
+          },
+          "response": []
+        },
+        {
+          "name": "create user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"userFirstName\":\"user\",\n  \"userLastName\":\"1\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/admin/user"
+          },
+          "response": []
+        },
+        {
+          "name": "get cars by status (FREE or LEASED)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/admin/car?status=FREE",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "admin",
+                "car"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "FREE"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "book car to user",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"carId\": \"85f1275b-d078-4fb8-9cbf-c0323b8abdac\",\n  \"leaseStartDate\": \"15-03-2025\",\n  \"leaseEndDate\": \"15-05-2025\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/admin/user/car"
+          },
+          "response": []
+        },
+        {
+          "name": "get user cars",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:8080/api/v1/admin/user/user-1@example.com/car"
+          },
+          "response": []
+        },
+        {
+          "name": "cancel car",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userEmail\": \"user-1@example.com\",\n    \"carId\": \"85f1275b-d078-4fb8-9cbf-c0323b8abdac\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "http://localhost:8080/api/v1/admin/user/car"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "create owner",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"ownerEmail\": \"owner-1@example.com\",\n    \"ownerFirstName\":\"owner\",\n    \"ownerLastName\":\"1\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/owner"
+      },
+      "response": []
+    },
+    {
+      "name": "create car",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"carName\": \"car-1\",\n    \"ownerEmail\": \"owner-1@example.com\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/owner/car"
+      },
+      "response": []
+    },
+    {
+      "name": "get cars of owner",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/owner/owner-1@example.com/car"
+      },
+      "response": []
+    },
+    {
+      "name": "create user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"userFirstName\":\"user\",\n  \"userLastName\":\"1\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/user"
+      },
+      "response": []
+    },
+    {
+      "name": "get cars by status (FREE or LEASED)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/user/car?status=FREE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "user",
+            "car"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "FREE"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "book car to user",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userEmail\": \"user-1@example.com\",\n  \"carId\": \"082afd3a-9eea-4c66-9248-d9b9ac938615\",\n  \"leaseStartDate\": \"15-03-2025\",\n  \"leaseEndDate\": \"15-05-2025\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/user/car"
+      },
+      "response": []
+    },
+    {
+      "name": "get user cars",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/v1/user/user-1@example.com/car"
+      },
+      "response": []
+    },
+    {
+      "name": "cancel car",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userEmail\": \"user-1@example.com\",\n    \"carId\": \"4639b606-6ee8-4b78-a6ae-6ceca0813924\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/api/v1/user/car"
+      },
+      "response": []
+    }
+  ]
+}

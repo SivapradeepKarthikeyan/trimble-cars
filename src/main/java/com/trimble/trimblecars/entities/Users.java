@@ -62,11 +62,11 @@ public class Users {
         this.bookedCars = bookedCars;
     }
 
-    public List<CarLeaseHistory> getLeaseHistories() {
+    public List<CarLeaseHistory> getUserLeaseHistory() {
         return userLeaseHistory;
     }
 
-    public void setLeaseHistories(List<CarLeaseHistory> leaseHistories) {
+    public void setUserLeaseHistory(List<CarLeaseHistory> leaseHistories) {
         this.userLeaseHistory = leaseHistories;
     }
 

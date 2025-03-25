@@ -26,7 +26,7 @@ public class Car {
     private String carName;
 
     //Here if we give an owner object as an arg via constructor
-    //Hibernate will automatically assign the owner id with this car.
+    //Hibernate will automatically assign this car with that owner id
     @ManyToOne
     @JoinColumn(name = "owner_id")
     @JsonBackReference
@@ -34,7 +34,8 @@ public class Car {
     private String ownerEmail;
 
     //Here if we give a user object as an arg via constructor
-    //Hibernate will automatically assign the user id with this car.
+    //Hibernate will automatically assign this car with that user id
+    //NOTE :: This is used here to maintain the current user with this car.
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonBackReference
@@ -47,6 +48,8 @@ public class Car {
     private String leaseEndDate;
 
     //One car can have multiple lease history
+    //NOTE :: Here lease history is used like a notebook to keep track of which user used which car
+    //It has values of BOOKED and CANCELLED
     @OneToMany(mappedBy = "car")
     List<CarLeaseHistory> carLeaseHistory;
 
@@ -123,11 +126,11 @@ public class Car {
         this.leaseEndDate = leaseEndDate;
     }
 
-    public List<CarLeaseHistory> getLeaseHistory() {
+    public List<CarLeaseHistory> getCarLeaseHistory() {
         return carLeaseHistory;
     }
 
-    public void setLeaseHistory(List<CarLeaseHistory> leaseHistory) {
+    public void setCarLeaseHistory(List<CarLeaseHistory> leaseHistory) {
         this.carLeaseHistory = leaseHistory;
     }
 
